@@ -37,6 +37,7 @@ interface ExtendedCourseFilters extends CourseFilters {
   isAdmin?: boolean;
   owner_id?: string;
   tag?: string;
+  sort?: 'newest' | 'popular' | 'rating';
 }
 
 export const courseService = {
