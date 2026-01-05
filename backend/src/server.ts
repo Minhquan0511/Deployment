@@ -2,7 +2,7 @@ import app from './app';
 import { env } from './config/env';
 
 const PORT = env.PORT || 5000;
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log('\n========================================');
   console.log(`🚀 Server is running on port ${PORT}`);
   console.log(`📍 Environment: ${env.NODE_ENV}`);
