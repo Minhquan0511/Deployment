@@ -6,6 +6,7 @@ import {
   mockCourses,
   mockEnrollmentRequests,
 } from '@/services/mocks';
+import { toast } from 'sonner';
 
 // Helper to update enrolledUsers in mockCourses
 function addUserToCourseEnrolledUsers(courseId: string, userId: number) {
@@ -210,7 +211,7 @@ export function useDemoAppState() {
             // ...
             setSelectedCourse(courseWithAccess);
             if (courseRes.data.visibility === 'private' && !canAccess && !isOwner) {
-              import('sonner').then(({ toast }) => toast.error('Bạn không có quyền truy cập khoá học này.'));
+              toast.error('Bạn không có quyền truy cập khoá học này.');
               return;
             }
             navigateTo('course-detail', courseWithAccess);
