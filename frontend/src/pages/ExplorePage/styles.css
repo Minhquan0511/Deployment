@@ -1,0 +1,71 @@
+/* ExplorePage specific styles */
+
+.explore-header-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1E88E5 0%, #1565C0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Search bar focus effect */
+.explore-search-input {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.explore-search-input:focus {
+  border-color: #1E88E5;
+  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.1);
+}
+
+/* Filter dropdown */
+.explore-filter-dropdown {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.explore-filter-dropdown:hover {
+  border-color: #1E88E5;
+}
+
+/* Empty state */
+.explore-empty-state {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Course Grid - Fixed width */
+.explore-course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.explore-course-grid .course-card {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .explore-course-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .explore-course-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (min-width: 1025px) {
+  .explore-course-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
